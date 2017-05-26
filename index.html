@@ -1,90 +1,3947 @@
+
+
+
 <!DOCTYPE html>
-
-<html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh" class="no-js" manifest="http://www.yixianfeng.win/index.manifest">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Refresh" Content="10; ./welcome.html">
+<meta charset="utf-8" />
+<title>博客 | 易先锋</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="博客,易先锋">
+<meta name="author" content="易先锋">
+<meta name="renderer" content="webkit">
 
-<title>The GC's Website</title>
-<style type="text/css">
-    canvas {display: block;}
-	html
-	{
-	background:black;
-	margin:0px;
-	padding:0px;
-	border:0px;
-	height:100%;
-	width:100%;
-	overflow:hidden;
-	}
-</style>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/style-metronic.css" rel="stylesheet" type="text/css" />
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/style.css" rel="stylesheet" type="text/css" />
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/style-responsive.css" rel="stylesheet" type="text/css" />
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/plugins.css" rel="stylesheet" type="text/css" />
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/pages/blog.css" rel="stylesheet" type="text/css" />
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/assets/css/themes/light.css" rel="stylesheet" type="text/css" id="style_color" />
+<link href="http://cdn.bootcss.com/zTree.v3/3.5.24/css/zTreeStyle/zTreeStyle.min.css" rel="stylesheet" type="text/css">
+<link href="http://7xj7hx.com1.z0.glb.clouddn.com/css/marxico.css" rel="stylesheet"></link>
+<link href="http://cdn.bootcss.com/highlight.js/9.7.0/styles/vs.min.css" rel="stylesheet"></link>
+
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" />
 </head>
-<body>
-  <canvas id="c">
-  <script type="text/javascript">
-		window.onload=function()
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-header-fixed page-sidebar-fixed">
+	<!-- BEGIN HEADER -->
+	<div class="header navbar navbar-fixed-top">
+		<!-- BEGIN TOP NAVIGATION BAR -->
+		<div class="header-inner">
+			<!-- BEGIN LOGO -->
+			<a class="navbar-brand" href="http://www.yixianfeng.win">
+				<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" height="42px" alt="logo" class="waves" />
+			</a>
+			<!-- END LOGO -->
+			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+			<a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<img src="http://7xj7hx.com1.z0.glb.clouddn.com/assets/img/menu-toggler.png" alt="" />
+			</a>
+			<!-- END RESPONSIVE MENU TOGGLER -->
+			<!-- BEGIN TOP NAVIGATION MENU -->
+			<ul class="nav navbar-nav pull-right">
+				<!-- BEGIN TODO DROPDOWN -->
+				<li class="dropdown">
+					<a href="http://www.yixianfeng.win/index.html" class="waves">
+						<i class="icon-gongkaiboke"></i> 博客
+					</a>
+				</li>
+				<li class="dropdown">
+					<a target="_blank" href="https://github.com/xianfengyi" class="waves">
+						<i class="icon-github"></i> GitHub
+					</a>
+				</li>
+				<li class="dropdown">
+					<a target="_blank" href="http://blog.csdn.net/yixianfeng41" class="waves">
+						<i class="icon-csdn"></i> CSDN
+					</a>
+				</li>
+				<!-- END TODO DROPDOWN -->
+			</ul>
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER -->
+	<div class="clearfix"></div>
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar-wrapper">
+			<div class="page-sidebar navbar-collapse collapse">
+				<!-- BEGIN SIDEBAR MENU -->
+				<ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
+					<li class="sidebar-toggler-wrapper">
+						<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+						<div class="sidebar-toggler hidden-phone"></div>
+						<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					</li>
+					<li class="sidebar-search-wrapper">
+						<form class="sidebar-search" action="" method="get">
+							<div class="form-container">
+								<div class="input-box">
+									<a href="javascript:;" class="remove"> </a>
+									<input type="text" name="wd" placeholder="搜索" />
+									<input type="button" class="submit" value=" " />
+								</div>
+							</div>
+						</form>
+					</li>
+					<li>
+						<ul id="tree" class="ztree" style="display: none; width: 218px; overflow: hidden;">
+						</ul>
+					</li>
+
+				</ul>
+				<!-- END SIDEBAR MENU -->
+			</div>
+		</div>
+		<!-- END SIDEBAR -->
+
+		<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				<!-- BEGIN PAGE HEADER-->
+				<div class="width-1020-center">
+					<ul class="page-breadcrumb breadcrumb">
+						<li>
+							<i class="icon-shouyeshouye"></i>
+							<a href="http://www.yixianfeng.win/index.html" class="text-blue"> 首页 </a>
+							<i class="icon-rightarrow"></i>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="pure-text"> 博客列表 </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END PAGE HEADER-->
+
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="blog-page">
+					
+						<div class="width-1020-center blog-tag-data">
+							<ul class="list-inline blog-tags">
+								<li>
+									<i class="icon-fenlei"></i>
+									
+										
+											<a href="http://www.yixianfeng.win/index.html" class="bg-blue"> 全部分类 </a>
+										
+										
+									
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/5633659.html"> c#(3) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/5618607.html"> c++(33) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/5734119.html"> QT(2) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构(23) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix(24) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6319854.html"> 开源库(2) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6324100.html"> Windows(2) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6416214.html"> 视频会议系统(2) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘(6) </a>
+											
+										
+									
+										
+											
+											
+												<a href="http://www.yixianfeng.win/category/6505361.html"> python(2) </a>
+											
+										
+									
+								</li>
+							</ul>
+							<hr>
+						</div>
+					
+
+					<div class="width-1020-center">
+						<div>
+							<div id="MainListDiv" style="margin: 10px 0px;">
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170417194933323" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-04-17 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(94) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/70215817#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/70215817.html" class="text-bold"> 服务器远程安装Matlab2015 </a>
+											</h2>
+											<p>因为在windows上跑matlab实验，出现内存不足的情况，因此，希望能在服务器上安装一个matlab。然后出现各种问题，花了一天时间才装好，特此记录下。因为对于没装过的童靴来说，每一个步骤都很关键，因此，尽量把每个步骤写的细一点。Matlab镜像文件matlab 安装镜像文件我是从这儿下载的，再次对上传者表示感谢，地址：镜像文件，提取码为：4gj3。原博客在参考资料【3】安装步骤1、上传镜像文件...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/70215817.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170411163336409" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-04-11 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(279) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/61917158#comments"> 评论(2) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/61917158.html" class="text-bold"> 常用的相似度计算方法原理及实现 </a>
+											</h2>
+											<p>在数据分析和数据挖掘以及搜索引擎中，我们经常需要知道个体间差异的大小，进而评价个体的相似性和类别。常见的比如数据分析中比如相关分析，数据挖掘中的分类聚类（K-Means等）算法，搜索引擎进行物品推荐时。相似度就是比较两个事物的相似性。一般通过计算事物的特征之间的距离，如果距离小，那么相似度大；如果距离大，那么相似度小。比如两种水果，将从颜色，大小，维生素含量等特征进行比较相似性。问题定义：...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/61917158.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-10 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(155) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/61208974#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/61208974.html" class="text-bold"> C/C++可变参数函数 </a>
+											</h2>
+											<p>一、C可变参数函数一般我们编程的时候，函数中形式参数的数目通常是确定的，在调用时要依次给出与形式参数对应的实际参数。但在某些情况下我们希望函数的参数个数可以根据需要确定，因此c语言引入可变参数函数。典型的可变参数函数的例子有printf()、scanf()等.先看代码：printf(“hello,world!”);其参数个数为1个。printf(“a=%d,b=%ｓ,c=%c”,a,b,c);其参...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/61208974.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-10 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(127) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/61201951#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/61201951.html" class="text-bold"> 套接字选项 </a>
+											</h2>
+											<p>一、操纵套接字选项的方法1、getsockopt和setsockopt函数这两个函数仅用于套接字#include    int getsockopt(int sock, int level, int optname, void *optval, socklen_t *optlen);  int setsockopt(int sock, int level, int o...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/61201951.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-10 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(102) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/61196503#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/61196503.html" class="text-bold"> UDP-Connect </a>
+											</h2>
+											<p>我们都知道TCP 是面向连接的，因此再传输数据之前必须要建立连接，也就是客户端调用connect()，服务端accept(),完成三次握手，建立连接。 我们也知道UDP是面向无连接的，它传输数据之前是不需要建立连接的，那么对于UDP通信编程，我们是否需要调用connect了？如果可以，什么时候调用了？调用了有什么好处了？一、发送接收函数首先回顾下，传输数据的两组函数1、tcp...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/61196503.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170310130612961?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-10 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(178) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/61195844#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/61195844.html" class="text-bold"> TCP-流量控制 </a>
+											</h2>
+											<p>所谓的“流量控制”，就是让发送方的发送速率不要太快，要让接受方来的及接收。这是一种对于端的控制，不像拥塞控制，是对网络状况的控制。那么，TCP是怎么实现流量控制的了？这个可以从成块数据(大分组）、交互数据流（小分组）两种数据流情况来详细讨论。一、成块数据对于成块数据，一般采用滑动窗口实现流量控制。滑动窗口滑动窗口，也就是接收方来控制发送方，接收方告诉发送方，自己最多可以接受多少数据，然后发送方根据这...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/61195844.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(68) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/59123231#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/59123231.html" class="text-bold"> 守护进程概念及实例 </a>
+											</h2>
+											<p>守护进程（Daemon）是运行在后台的一种特殊进程。它独立于控制终端并且周期性地执行某种任务或等待处理某些发生的事件。守护进程是一种很有用的进 程。Linux的大多数服务器就是用守护进程实现的。比如，Internet服务器inetd，Web服务器httpd等。同时，守护进程完成许多系统任 务。比如，作业规划进程crond，打印进程lpd等。在了解守护进程前，先看看进程组、会话、控制终端以及作业的概念...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/59123231.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-03-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(215) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/59057446#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/59057446.html" class="text-bold"> 多进程和多线程 </a>
+											</h2>
+											<p>“进程是程序在处理机上的一个执行过程，是资源分配的基本单位”；“线程是CPU调度的一个基本单位”。概念，我们都烂熟于心了，那么是否可以究其本质的分析下，多进程和多线程的优缺点，以便在实际场景中进行合适的选择了？一、多进程1、概念在同一个时间里，同一个计算机系统中如果允许两个或两个以上的进程处于运行状态，这便是多任务。现代的操作系统几乎都是多任务操作系统，能够同时管理多个进程的运行。2、优点1）编程相...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/59057446.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-28 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(195) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/58591566#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/58591566.html" class="text-bold"> 随机数问题 </a>
+											</h2>
+											<p>一、用随机函数构造另一个随机函数比如，有这样一个需求，现在有一个rand5（）函数，这个函数可以生成1-5的随机数，让你通过这个函数生成1-7范围的随机数。怎么做了？  一般思路是这样的：用两次rang5函数，通过这两次rand5结果，构造出一个随机数范围包括0-7，但比0-7大的范围就好了。比如（rand5 -1）*5 +rand5，它的范围为1-25（包括0-7），因为rand5产生每个数随机概...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/58591566.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-23 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(118) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56671130#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56671130.html" class="text-bold"> Linux命令-sed </a>
+											</h2>
+											<p>原文地址：linux sed命令详解一、简介sed 是一种在线编辑器，它一次处理一行内容。处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有 改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56671130.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-23 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(120) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56670575#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56670575.html" class="text-bold"> 操作系统-内存管理笔记（一） </a>
+											</h2>
+											<p>内存管理最基本的操作就是由处理器把程序装入内存中运行。技术有固定分区、动态分区、简单分页、简单分段、虚拟内存分页、虚拟内存分段等。在现代操作系统中基本都有虚拟内存技术。下面了解下各个方法的思想。1、固定分区管理用户内存空间的最简单的方法是就是把它分成许多固定边界的区域。对于分区大小，我们可以采用大小相等分区，或者大小不相等分区。1）大小相等的分区。 在这种情况下，小于或者等于分区大小的任何进程都可...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56670575.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-23 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(239) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56666640#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56666640.html" class="text-bold"> Effective STL-尽量使用区间操作代替单元素操作 </a>
+											</h2>
+											<p>一、原因：1、代码更少，更简洁； 2、 对序列容器，还可以避免单个单个申请造成多次分配内存（拷贝开销大）二、区间操作：1）区间构造：container::container(InputIterator begin,InputIterator end);2）区间插入：对于序列容器：void Container::insert(Iterator positon,//插入位置...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56666640.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-23 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(225) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56666442#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56666442.html" class="text-bold"> Effective STL-各种容器正确删除元素方法 </a>
+											</h2>
+											<p>一、去除一个容器中有特定值得所有对象1、如果容器是vector、string或deque，使用erase-remove惯用法c.erase(remove(c.begin,c.end(),value),c.end());//c为容器，value为待删值2、对于listc.remove(value);3、对于关联容器 关联容器无remove成员函数，它是调用erase函数。c.erase(value)...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56666442.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(197) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56298957#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56298957.html" class="text-bold"> 使用 C++11 智能指针时要避开的 10 大错误 </a>
+											</h2>
+											<p>我很喜欢新的C++11的智能指针。在很多时候，对很多讨厌自己管理内存的人来说是天赐的礼物。在我看来，C++11的智能指针能使得C++新手教学更简单。其实，我已经使用C++11两年多了，我无意中发现多种错误使用C++11智能指针的案例，这些错误会使程序效率很低或者直接崩溃。为了方便查找，我把它们按照下文进行了归类。在开始之前，我们用一个简单的Aircraft类来展示一下这些错误。cl...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56298957.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-21 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(212) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56313899#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56313899.html" class="text-bold"> shell-特殊符号 </a>
+											</h2>
+											<p>在Shell中，有几个符号有着特别的含义，分别是#符号、分号、引号、斜线与反斜线、反引号、冒号、问号、美元符号，下面详细看看这几个特殊字符的作用。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56313899.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-21 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(294) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/56299014#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/56299014.html" class="text-bold"> Linux命令-查看文件 </a>
+											</h2>
+											<p>linux中查看文件的命令有cat，more，less，head，tail等，本文主要看看他们的用法与区别。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/56299014.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(105) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55804969#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55804969.html" class="text-bold"> TCP-定时器 </a>
+											</h2>
+											<p>TCP定时器对于每个链接，TCP拥有四个定时器，分别是：重传定时器、坚持定时器、保活定时器、2MSL定时器。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55804969.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170219152247510?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(154) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55804951#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55804951.html" class="text-bold"> TCP-核心重点知识 </a>
+											</h2>
+											<p>一、建立连接建立连接的过程，如图所示：   1、“三次握手”过程：1）第一次握手：建立连接时，客户端A发送SYN包（SYN=1,seq=x）到服务器B，并进去SYN-SEND状态，等待服务器B确认； 2）服务器B收到A发送的SYN包，对其进行确认，向A发送SYN+ACK包（SYN=1，ACK=1,seq=y,ack=x+1）,此时服务器B进入SYN-RECVD状态； 3）客户端A收到服务器...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55804951.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170219150937550?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(135) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55804840#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55804840.html" class="text-bold"> TCP-基础知识 </a>
+											</h2>
+											<p>网络层次模型，以及TCP头部格式...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55804840.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(102) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55702141#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55702141.html" class="text-bold"> 二叉树-常见简单算法题 </a>
+											</h2>
+											<p>二叉树，对一些常见的简单算法题，比如翻转二叉树，求高度，判断是否是相等的二叉树等，我们是必须掌握的！！！...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55702141.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-18 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(140) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55684782#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55684782.html" class="text-bold"> 常用算法-回朔法 </a>
+											</h2>
+											<p>1、概念回溯算法实际上一个类似枚举的搜索尝试过程，主要是在搜索尝试过程中寻找问题的解，当发现已不满足求解条件时，就“回溯”返回，尝试别的路径。回溯法是一种选优搜索法，按选优条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择并不优或达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。许多复杂的，规模较大的问题都可以使用回溯法，有“通用...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55684782.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170217122418098?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-17 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(157) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55506854#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55506854.html" class="text-bold"> Linux UDP Socket编程（一） </a>
+											</h2>
+											<p>UDP简介UDP—用户数据报协议，是一个简单的面向数据报的运输层协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快....        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55506854.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-17 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(195) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55506750#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55506750.html" class="text-bold"> linux编程常用头文件 </a>
+											</h2>
+											<p>转自：socket网络编程中的头文件Socket编程中需要用到的头文件stdlib.h   ： //某些结构体定义和宏定义，如EXIT_FAILURE、EXIT_SUCCESS等sys/types.h：包含很多类型重定义，如pid_t、int8_t等sys/socket.h：与套接字相关的函数声明和结构体定义，如socket()、bind()、connect()及struct sockaddr的定义...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55506750.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1759) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55273704#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6505361.html"> python </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55273704.html" class="text-bold"> python itchat实现微信自动回复 </a>
+											</h2>
+											<p>今天在实验楼发现一个特别好玩的，python 微信库itchat,可以实现自动回复等多种功能，好玩到根本停不下来啊，尤其是调戏调戏不懂计算机的，特别有成就感，哈哈！！...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55273704.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(56) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55262171#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55262171.html" class="text-bold"> 位运算技巧与应用 </a>
+											</h2>
+											<p>位运算是把数字用二进制表示之后，对每一位上的0或者1的运算。运算包括与、或、异或，非。熟练掌握位运算技巧，能给我们解决问题提供一些巧妙的方法。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55262171.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170216143023071?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(158) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52684432#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52684432.html" class="text-bold"> 二分查找实现及其应用 </a>
+											</h2>
+											<p>二分查找，应用广泛，将n个元素分成个数大致相同的两半，取a[n/2]与欲查找的x作比较，如果x=a[n/2]则找到x，算法终止。如果xa[n/2]，则我们只要在数组a的右半部继续搜索x。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52684432.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170215235852029?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(337) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55228458#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55228458.html" class="text-bold"> 二叉树-遍历终极版 </a>
+											</h2>
+											<p>对于二叉树的遍历，最熟悉的就是递归遍历了，对二叉树的非递归遍历大致知道一些，但是不太熟悉，尤其是后续非递归遍历的实现，一直比较懵逼，于是上网查询了一下，果然大神无处不在，那个后序遍历的双栈法，简直让人拍案叫绝，下面总结下。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55228458.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(420) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55225750#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55225750.html" class="text-bold"> 二叉树-创建、重建、转化 </a>
+											</h2>
+											<p>对于二叉树的创建女，一般我们只熟悉最简单的二叉树创建方式，即逐个输入节点，然后按照先序遍历或者中序、后序遍历方式来递归建立二叉树。但是，光掌握这个是不够的，我们还得掌握二叉树的重建（先序中序重建二叉树，后序中序重建二叉树），数组转换为二叉树，链表转换为二叉树等等。1、最简单的创建方式我们可以根据先序遍历递归创建二叉树，当然也可以中序或者后序遍历方式创建二叉树。//创建二叉树BTress Creat...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55225750.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170215130413400?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(126) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55194329#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55194329.html" class="text-bold"> Linux TCP Socket编程（二） </a>
+											</h2>
+											<p>前面通过多进程，多线程，支持处理多个客户端通信，本篇将讲述用select这个IO复用来实现。IO模型首先连接一下IO模型，unix下有5种可用IO模型，分别是：阻塞式IO、非阻塞式IO、IO复用、信号驱动式IO。  5种IO模型比较 1、阻塞式IO阻塞式IO是最常用的IO模式，它就是没有数据就阻塞，一直等到有数据位置，期间啥也不干，就一门心思等数据。2、非阻塞式IO非阻塞式IO，就是不断轮询，...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55194329.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170116155719083?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(120) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54575036#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54575036.html" class="text-bold"> 特征工程-数据预处理 </a>
+											</h2>
+											<p>通过特征提取，我们能得到未经处理的特征，这时的特征可能有以下问题：1）不属于同一量纲：即特征的规格不一样，不能够放在一起比较。无量纲化可以解决这一问题。 2）信息冗余：对于某些定量特征，其包含的有效信息为区间划分，例如学习成绩，假若只关心“及格”或不“及格”，那么需要将定量的考分，转换成“1”和“0”表示及格和未及格。二值化可以解决这一问题。 3）定性特征不能直接使用：某些机器学习算法和模...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54575036.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170116161715874?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(67) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54575393#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54575393.html" class="text-bold"> 特征工程-特征选择 </a>
+											</h2>
+											<p>当数据预处理完成后，我们需要选择有意义的特征输入机器学习的算法和模型进行训练。通常来说，从两个方面考虑来选择特征：特征是否发散：如果一个特征不发散，例如方差接近于0，也就是说样本在这个特征上基本上没有差异，这个特征对于样本的区分并没有什么用。  特征与目标的相关性：这点比较显见，与目标相关性高的特征，应当优选选择。除方差法外，本文介绍的其他方法均从相关性考虑。根据特征选择的形式又可以...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54575393.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(61) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54575425#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54575425.html" class="text-bold"> 特征工程-降维 </a>
+											</h2>
+											<p>当特征选择完成后，可以直接训练模型了，但是可能由于特征矩阵过大，导致计算量大，训练时间长的问题，因此降低特征矩阵维度也是必不可少的。常见的降维方法除了以上提到的基于L1惩罚项的模型以外，另外还有主成分分析法（PCA）和线性判别分析（LDA），线性判别分析本身也是一个分类模型。PCA和LDA有很多的相似点，其本质是要将原始的样本映射到维度更低的样本空间中，但是PCA和LDA的映射目标不一样：PCA是...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54575425.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170116155244702?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-15 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(61) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54574811#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54574811.html" class="text-bold"> 特征工程-总览 </a>
+											</h2>
+											<p>有这么一句话在业界广泛流传：数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。那特征工程到底是什么呢？顾名思义，其本质是一项工程活动，目的是最大限度地从原始数据中提取特征以供算法和模型使用。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54574811.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170214174209262?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-02-14 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(75) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/55102751#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/55102751.html" class="text-bold"> linux TCP Socket编程（一） </a>
+											</h2>
+											<p>linux tcp socket 通信学习...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/55102751.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(46) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668493#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668493.html" class="text-bold"> string函数-strcspn </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668493.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(78) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668517#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668517.html" class="text-bold"> string函数-strcat </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668517.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(43) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668524#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668524.html" class="text-bold"> string函数-strchr </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668524.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(50) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668531#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668531.html" class="text-bold"> string函数-strncmp </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668531.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(84) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668539#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668539.html" class="text-bold"> string函数-strcmp </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668539.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(84) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668543#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668543.html" class="text-bold"> string函数-strstr </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668543.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(57) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668546#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668546.html" class="text-bold"> string函数-strlen </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668546.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(65) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668508#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668508.html" class="text-bold"> string函数-strcpy </a>
+											</h2>
+											<p>本系列将对string函数的用法以及实现做一个总结，共包括以下部分：篇一： string函数strcspn 篇二： string函数strcpy 篇三： string函数strcat 篇四： string函数strchr 篇五： string函数strncmp 篇六： string函数strcmp 篇七： string函数strstr 篇八： string函数strlen...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668508.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(115) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668264#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668264.html" class="text-bold"> c++关键字-const </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union一、定义常量const修饰变量，以下两种定义...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668264.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(55) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668285#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668285.html" class="text-bold"> c++关键字-extern </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union1、基本解释extern可以置于变量或者...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668285.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(67) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668296#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668296.html" class="text-bold"> c++关键字-operator </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union一、概念重载的运算符是具有特殊名字的函数...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668296.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(90) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668302#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668302.html" class="text-bold"> c++关键字-sizeof </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union1. 定义sizeof是一个操作符（op...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668302.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(40) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668306#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668306.html" class="text-bold"> c++关键字-static </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-unionstatic的作用可以归结为三条：1、隐...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668306.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(38) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668310#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668310.html" class="text-bold"> c++关键字-new </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union一般我们常用的申请内存的方法有new与mallo...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668310.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(46) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668321#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668321.html" class="text-bold"> c++关键字-volatile </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union定义volatile 变量是随时可能发生...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668321.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20170209155412014?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveWl4aWFuZmVuZzQx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(68) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54668327#comments"> 评论(1) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54668327.html" class="text-bold"> c++关键字-union </a>
+											</h2>
+											<p>本系列将对一些常见c++关键字做一个总结，共包括一下部分： 篇一：c++关键字-const 篇二：c++关键字-extern 篇三：c++关键字-operator 篇四：c++关键字-sizeof 篇五：c++关键字-static 篇六：c++关键字-new 篇七：c++关键字-volatile 篇八：c++关键字-union什么是联合“联合”是一种特殊的类，也是一种构造类型的数据结...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54668327.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img1.tuicool.com/InUVfy.png!web" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2017-01-05 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(193) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/54093701#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/54093701.html" class="text-bold"> 稀疏矩阵存储格式总结 </a>
+											</h2>
+											<p>稀疏矩阵是指矩阵中的元素大部分是0的矩阵，事实上，实际问题中大规模矩阵基本上都是稀疏矩阵，很多稀疏度在90%甚至99%以上。因此我们需要有高效的稀疏矩阵存储格式。本文总结几种典型的格式：COO,CSR,DIA,ELL,HYB。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/54093701.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-12-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(82) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53697369#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53697369.html" class="text-bold"> 函数重载、覆盖与隐藏 </a>
+											</h2>
+											<p>一、函数重载1、特征：1）相同的范围（在同一个类中）； 2）函数名字相同； 3）参数不同；  4）有无virtual关键字不影响。2、调用调用实参与形参符合的那个函数。二、函数覆盖覆盖是指派生类函数覆盖基类函数。1、特征：1）不同的范围（分别位于派生类与基类）； 2）函数名字相同； 3）参数相同； 4）基类函数必须有ovirtual 关键字，否则就是隐藏了。 2、调用1）当派生类对象派生...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53697369.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-12-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(76) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53689303#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53689303.html" class="text-bold"> 哈希表一 </a>
+											</h2>
+											<p>一、定义哈希表(散列表)通过将关键码映射到表中的某个位置上来存储元素，然后根据关键码来访问元素。具体来说，就是在关键字 k 和元素的存储位置 p 之间建立一个对应关系 f ，使得 p=f(k) ， f 称为哈希函数 。创建哈希表时，把关键字为 k 的元素 直接存入地址为 f(k) 的单元 ；以后当查找关键字为 k 的元素时，再利用哈希函数计算出该元素的存储位置 p=f(k) ，从而达到按关键 字直接...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53689303.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-12-16 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(88) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53689159#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53689159.html" class="text-bold"> c++复杂指针 </a>
+											</h2>
+											<p>c++指针是一个难题，复杂指针更是一个难题，因此有必要分清指针数组与数组指针，函数指针与指针函数，并能准确识别他们，并进行灵活运用！...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53689159.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20161013012445567" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(296) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53229734#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53229734.html" class="text-bold"> 二叉树-详解平衡二叉排序树AVL </a>
+											</h2>
+											<p>平衡二叉搜索树AVL也许因为输入值不够随机，也许因为输入顺序的原因，还或许一些插入、删除操作，会使得二叉搜索树失去平衡，造成搜索效率低落的情况。    比如上面两个树，在平衡树上寻找15就只要2次查找，在非平衡树上却要5次查找方能找到，效率明显下降。那么什么叫“平衡”，直观上的最佳平衡条件就是 每个节点的左右子树有着相同高度，但这确实太过苛刻。平衡二叉树AVL tree退而求其次，要求任何节...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53229734.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://i.imgur.com/jPVMzPE.jpg" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-09 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(88) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53106380#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53106380.html" class="text-bold"> 递归原理及常见应用 </a>
+											</h2>
+											<p>一、什么是递归递归算法，就是直接或间接调用自身的函数，也就是把一个大的复杂的问题层层转换为一个小的和原问题相似的问题来求解的这样一种策略。上面解释可能有点太官方了，来看看知乎上大神的通俗易懂的解释：解释一“古之欲明明德于天下者，先治其国；欲治其国者，先齐其家；欲齐其家者，先修其身；欲修其身者，先正其心；欲正其心者，先诚其意；欲诚其意者，先致其知，致知在格物。物格而后知至，知至而后意诚，意诚而后心正，...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53106380.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-05 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(771) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53045704#comments"> 评论(2) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6505361.html"> python </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53045704.html" class="text-bold"> python3获取免费代理IP </a>
+											</h2>
+											<p>需要代理IP的，拿过去直接可以用。如果这个觉得这个代理网站的ip太少，可以自行添加子类实现相应方法即可...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53045704.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-04 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1339) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53027805#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53027805.html" class="text-bold"> C++关键字—Const </a>
+											</h2>
+											<p>const 这个关键字还是比较重要的，需要掌握...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53027805.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20161101205653312" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1186) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53001642#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53001642.html" class="text-bold"> Windows下用IDEA进行Spark开发 </a>
+											</h2>
+											<p>当集群搭建好了,接下来就是将自己的代码写好，扔到集群上进行跑了。安装软件1、JDK  2、Intellj IDEA  3、xshell这三部安装过程这里不介绍，下一步下一步即可。4、Intellj IDEA 安装scala插件 首次使用会出现安装插件提示，如果没安装，就在File-&gt;setting-&gt;plugins,输入scala.所需包各种包最好保持与集群版本一致。1、java sdk...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53001642.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20161101220905448" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-11-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1153) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/53000144#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/53000144.html" class="text-bold"> 大数据—Spark简介 </a>
+											</h2>
+											<p>1、Spark是什么   Spark是基于内存计算的大数据并行计算框架，是一个用来实现快速而通用的集群计算平台。它替代了广泛使用的MapReduce计算模型，并且支持交互式查询和流处理等其他高效计算模型。2、Spark与Hadoop的关系Spark是一个计算框架,它只是MapReduce的替代方案；而Hadoop是一个生态系统，包含计算框架MapReduce和分布式文件系统HDFS，还有Hba...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/53000144.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-10-30 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1348) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52955264#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52955264.html" class="text-bold"> 数据结构-链表篇 </a>
+											</h2>
+											<p>链表作为数据结构主要组成部分之一，在面试中也是主要考点，花了几点时间把LeetCode上的链表的题做了一下，发现还是有规律可循的，特此总结下！...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52955264.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://i.imgur.com/Xkcyheg.jpg" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-10-14 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1649) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52812211#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52812211.html" class="text-bold"> 图文并茂，再次温顾七大排序算法 </a>
+											</h2>
+											<p>1、插入排序1.1、 算法原理插入排序的基本方法是：每步将一个待排序序列按数据大小插到前面已经排序的序列中的适当位置，直到全部数据插入完毕为止。  假设有一组无序序列 R0, R1, … , Rn−1：  1、 将这个序列的第一个元素R0视为一个有序序列；  2、 依次把 R1, R2, … , Rn−1 插入到这个有序序列中；  3、 将Ri插入到有序序列中时，前 i-1 个数是有序的，将...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52812211.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20161012223249365" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-10-14 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(4755) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52802855#comments"> 评论(3) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52802855.html" class="text-bold"> 二叉树-详解二叉排序树 </a>
+											</h2>
+											<p>一、二叉搜索树首先二叉排序树也是一棵二叉树，所谓二叉树，就是“任何节点最多只允许两个子节点”，这两个子节点称为左右子节点。如下便是一个二叉树。   1.1、二叉排序树性质：1、就是若它的左子树不空，则左子树上所有节点的值均小于它的根节点的值； 2、若它的右子树不空，则右子树上所有节点的值均大于其根节点的值。 3、换句话说就是：任何节点的键值一定大于其左子树中的每一个节点的键值，并小于其右子...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52802855.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://i.imgur.com/sdUyl7w.jpg" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-10-11 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(2906) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52786105#comments"> 评论(2) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6456349.html"> 数据挖掘 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52786105.html" class="text-bold"> 大数据——初识Hadoop </a>
+											</h2>
+											<p>Hadoop主要包含如下核心组件：1. HDFS。它是hadoop使用的分布式文件系统，提供了hadoop运算过程中的数据存储、数据备份、数据错误校验等功能。  2. MapReduce。 它是hadoop的并行计算框架。基于它写出来的应用程序能够运行在由上千个商用机器组成的大型集群上，并以一种可靠容错的方式并行处理上TB级别的数据集。3. HBSE。HBse是建立在Hadoop HDFS之上的可靠的...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52786105.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-09-24 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(2062) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52650505#comments"> 评论(1) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52650505.html" class="text-bold"> 数学建模，我也总算是参加过的人了 </a>
+											</h2>
+											<p>大学四年都没有参加过数学建模比赛，对于我这种天不怕地不怕，扛起火枪就死命往前冲的人来说，没有去感受一下那种被虐的体无完肤的感觉，实在是一种遗憾。终于在研究生期间，让我逮着了机会。前段时间一个数学院的女生向我请教C++问题，然后我顶着机院的光环，强行装了一把逼，瞬间树立了大神形象。这不，数学建模开始了，她和一个物理院的同学（后来发现是大神）就邀请我参加。那还有啥说的，对于我这种不要Face的人，那肯定...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52650505.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+													<img src="http://img.blog.csdn.net/20160924114301600" alt="" class="img-responsive center-block" style="max-height: 220px;">
+												
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-09-24 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1112) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52649918#comments"> 评论(2) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52649918.html" class="text-bold"> 九九八十一难之MySQL安装 </a>
+											</h2>
+											<p>MySql安装（win7)任何东西都是“会者不难，难者不会”。即便是MySQL，迈出第一步也是不容易的。以前都用Sql Server,然后每次都要经历重装一次系统方能将其卸载干净的痛苦。虽然，作为微软忠实用户，我也实在受不了这个，那就用Mysql吧。简简单单的东西，我还是折腾了一下午才装好，这里我主要记录一下我遇到的问题，免得下次安装忘了，如果其他人也遇到类似问题，或许有帮助。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52649918.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-09-20 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1790) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52591585#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6416214.html"> 视频会议系统 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52591585.html" class="text-bold"> RGB数据保存为BMP图片 </a>
+											</h2>
+											<p>一、BMP文件由文件头、位图信息头、颜色信息和图形数据四部分组成。1、BMP文件头（14字节）[cpp]&#160;view plain&#160;copy&#160;typedef&#160;struct&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/****&#160;BMP&#160;file&#160;header&#160;structure&#160;****/&#160;&#160;{&#160;&#160;&#160;&#160;&#160;&#160;unsigned&#160;int...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52591585.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-09-20 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(2957) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52591408#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52591408.html" class="text-bold"> Matlab将元胞数组输出到txt或者dat文件中 </a>
+											</h2>
+											<p>原链接：http://cn.mathworks.com/help/matlab/import_export/write-to-delimited-data-files.html#br2ypq2-1方法一：用fprint输出元胞数组这个例子展示了怎么用fprint方法将元胞数组输出到TEXT 文件中。创建一个元胞数组例子, 以便输出C = {&#39;Atkins...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52591408.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-09-13 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1715) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52527510#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6416214.html"> 视频会议系统 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52527510.html" class="text-bold"> 视频会议系统——多分屏 </a>
+											</h2>
+											<p>1、1*1屏幕：3、2*2屏幕：3、3*3屏幕：4、4*4屏幕：布局可以按照自己个性岁意思设计，你可以设计成1*2,1*5或者其他你喜欢的样式.系统页面开发用的是QT,这个多分屏主要数据类型有两个VideoFerame,MeetingPlaceWidget,这是我简化后，保留的两个主要数据类型，通过整两个类就可以实现如上面的效果，但是在实际运用中...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52527510.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-08-11 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(3027) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52181578#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6319854.html"> 开源库 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52181578.html" class="text-bold"> YUV420存储为BMP和JPG图片 </a>
+											</h2>
+											<p>网上大多数关于YUV420的资料都是关于YUV420P的，很少有YUV420SP的，因为YUV420SP的UV是交错存放的，处理起来相对麻烦点，但是YUV420SP也是一种常见格式，因此，在这里，我将关于YUV420SP格式数据的处理总结下，方便有需要的同志。一、YUV420格式数据介绍YUV,分为三个分量，“Y”表示明亮度，也就是灰度值；“U&quot;和”V&quot;表示的则是色度，作用是描述影...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52181578.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-08-09 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1927) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52166703#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5734119.html"> QT </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52166703.html" class="text-bold"> QPushButton设置背景图片变换（素材四连图） </a>
+											</h2>
+											<p>在QT中，QPushButton是我们经常用的控件，但是系统默认控件的样式不好看，因此我们一般都会给QPushButton设置背景图片，并且一般想达到的效果是，当鼠标放上去时是一张图片，当鼠标点击时是一张图片，当鼠标离开时，又是另外一张图片，怎么实现这个效果了。1、setStyleSheetsetStyleSheet(&quot;QPushButton{background-image: u...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52166703.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-08-09 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1523) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/52161322#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6324100.html"> Windows </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/52161322.html" class="text-bold"> Windows下对进程的一些操作 </a>
+											</h2>
+											<p>简单总结了下在windows系统下，如何判断进程是否在运行，以及如何打开指定exe进程，以及如何停止指定进程。...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/52161322.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-07-22 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(2581) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/51984685#comments"> 评论(1) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5618607.html"> c++ </a>
+														
+															<a href="http://www.yixianfeng.win/category/6324100.html"> Windows </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/51984685.html" class="text-bold"> 获取与设置windows系统下音频设备音量 </a>
+											</h2>
+											<p>一、获取设备音量/** * @brief GetAudioOutputVolumn用于获取设备输出音量 * @remark 不指定设备可能导致获取的音量为0 */int DeviceManager::GetAudioOutputVolumn( const std::string &amp;deviceName ){    //对于DirectSound设备，获取其对应波形设备音量...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/51984685.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-07-19 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1789) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/51955695#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6319854.html"> 开源库 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/51955695.html" class="text-bold"> windows下编译 libjpeg以及libjpeg-turbo </a>
+											</h2>
+											<p>二、编译libjpeg-turbo：1、&#160; 从https://sourceforge.net/projects/libjpeg-turbo/下载libjpeg-turbo最新源代码，将其保存到E:\Desktop\libjpeg-turbo-master文件夹下；2、&#160; 从http://www.cmake.org/下载最新版的CMake，并安装；3、&#160; 在E:\Deskto...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/51955695.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-03-28 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1513) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/51000470#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/5829745.html"> 数据结构 </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/51000470.html" class="text-bold"> 常用算法-分治法 </a>
+											</h2>
+											<p>基础知识1.&#160;分治法的思想：将原问题分解为几个规模较小但类似于原问题的子问题，递归地求解这些子问题，然后再合并这些子问题的解来建立原问题的解。2.&#160;满足分治策略的条件：1)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;该问题缩小到一定规模就可以解决；2)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;该问题可以分解为若干个规模较小的相同的问题，即该问题具有最优子结构；3)&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;利用该问题分解出的子问题可以合并为该问题的解；...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/51000470.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-01-04 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1358) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/50458041#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/50458041.html" class="text-bold"> unix同步——条件变量 </a>
+											</h2>
+											<p>一。互斥量和条件变量简介&#160; &#160; &#160; &#160;互斥量(mutex)从本质上说是一把锁，在访问共享资源前对互斥量进行加锁，在访问完成后释放互斥量上的锁。对互斥量进行加锁以后，任何其他试图再次对互斥锁加锁的线程将会阻塞直到当前线程释放该互斥锁。如果释放互斥锁时有多个线程阻塞，所有在该互斥锁上的阻塞线程都会变成可运行状态，第一个变为运行状态的线程可以对互斥锁加锁，其他线程将会看到互斥锁依然被锁住...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/50458041.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-01-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(1275) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/50445827#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/50445827.html" class="text-bold"> UNIX环境高级编程——信号 </a>
+											</h2>
+											<p>信号概念&#160;&#160;&#160;&#160;信号是软件终端，它提供了一种异步处理事件的方法。每个信号都有一个名字，这些名字都是以三个字符SIG开头。产生终端信号的条件：1.&#160;当用户按某些终端键时，产生信号。2.&#160;硬件异常产生信号：除数为0、无效的存储访问等等。3.&#160;进程用kill函数可将信号发送给另一个进程或进程组用户可用kill命令将信号发送给其他进程。4.&#160;当检测到某种软件条件已经发生，并将其通知...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/50445827.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2016-01-01 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(723) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/50445239#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/50445239.html" class="text-bold"> UNIX环境高级编程——进程（三） </a>
+											</h2>
+											<p>进程关系Unix终端登录过程：&#160;&#160;&#160;&#160;init-----&gt;init----&gt;getty-----&gt;login-----&gt;getpwname-----&gt;getpasw-----&gt;crypt-----&gt;登录成功&#160;&#160;&#160;&#160;系统管理员创建通常名为/etc/ttys的文件，文件中每个终端设备都有一行用来说明设备名和传递给getty程序的参数如终端的波特率等等&gt;&#160;&#160;&#160;&#160;1.当系统自举时，内核创建...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/50445239.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2015-12-31 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(768) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/50443785#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/50443785.html" class="text-bold"> UNIX环境高级编程——进程（二） </a>
+											</h2>
+											<p>进程控制进程标示符每个进程都有一个非负整数表示的唯一ID。虽然是唯一的，但是进程ID可以重用。当一个进程终止后，其进程ID就可以再次使用了。ID为0的通常是调度进程，常被称为交换进程，也被称为系统进程；ID为1的通常是init进程；ID为2的通常是页守护进程。#include #include pid_t getpid(void); return PIDpid_t getpp...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/50443785.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+									<div class="row">
+										<div class="col-md-4 blog-img blog-tag-data">
+											
+												
+												
+													<img src="http://avatar.csdn.net/C/3/B/1_yixianfeng41.jpg" alt="" class="img-responsive center-block">
+												
+											
+											<ul class="list-inline">
+												<li>
+													<i class="icon-rili"></i>
+													<a href="javascript:void(0)" class="pure-text"> 2015-12-31 </a>
+												</li>
+												<li>
+													<i class="icon-yanjing"></i>
+													<a href="javascript:void(0)" class="pure-text"> 阅读(834) </a>
+												</li>
+												<li>
+													<i class="icon-taolun"></i>
+													<a target="_blank" href="http://blog.csdn.net/yixianfeng41/article/details/50440512#comments"> 评论(0) </a>
+												</li>
+											</ul>
+
+											
+												<ul class="list-inline blog-tags">
+													<li>
+														<i class="icon-fenlei"></i>
+														
+															<a href="http://www.yixianfeng.win/category/6006179.html"> Linux/Unix </a>
+														
+													</li>
+												</ul>
+											
+										</div>
+										<div class="col-md-8 blog-article">
+											<h2>
+												<a href="http://www.yixianfeng.win/blog/50440512.html" class="text-bold"> UNIX环境高级编程——进程（一） </a>
+											</h2>
+											<p>进程环境1.&#160;Main函数&#160; &#160; C程序总是从main函数开始执行，main函数原型为&#160;int&#160;main(int&#160;argc,char&#160;*argv[]);&#160;其中，argc是命令行参数的数目，argv是指向参数的各个指针所构成的数组。当内核执行一个C程序时（使用exec函数），在调用main前先调用一个特殊的启动例程，可执行文件将此启动例程指定为程序的起始地址。启动例程从内核取得命令行参数...        </p>
+											<a class="btn blue waves" href="http://www.yixianfeng.win/blog/50440512.html">
+												查看文章 <i class="icon-youjiantou"></i>
+											</a>
+										</div>
+									</div>
+									<hr>
+								
+							</div>
+							<!-- END PAGE CONTENT-->
+						</div>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<!-- END PAGE CONTENT-->
+
+		</div>
+	</div>
+	<!-- END CONTENT -->
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="footer">
+		<div class="width-1020-center">
+			<div class="footer-inner">
+				2016 &copy; 易先锋.
+				<a target="_blank" href="http://www.ganecheng.tech"> 甘大神博客 </a>
+			</div>
+			<div class="footer-tools">
+				<span class="go-top"> <i class="icon-shangjiantou"></i>
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<!--[if lt IE 9]>
+	<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://cdn.bootcss.com/jquery-migrate/1.2.1/jquery-migrate.min.js" type="text/javascript"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="http://cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="http://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" type="text/javascript"></script>
+	<!-- END CORE PLUGINS -->
+	<script src="http://7xj7hx.com1.z0.glb.clouddn.com/assets/scripts/core/app.js"></script>
+	<script>
+		jQuery(document).ready(function()
 		{
-			var c = document.getElementById("c");
-			var ctx = c.getContext("2d");
-
-			c.addEventListener('click', function(e)
-			{   
-				location.href="./welcome.html";
-			}, false);
-
-			//全屏显示
-			c.height = window.innerHeight;
-			c.width = window.innerWidth;
-
-			var txts = "052あ7B8い易Yi先FENG锋う1え9お易かき士くけこ成EFCADG先HIJK士LMNO成PQRSTU易VWXYZE士FCADGH锋IJKLM";
-			txts = txts.split("");
-
-			var font_size = 28;
-			var columns = c.width/font_size;
-
-			//每行要输出数组
-			var drops = [];
-
-			for(var x = 0; x < columns; x++)
-				drops[x] = 1; 
-
-			//字符随机颜色
-			var wh_color = new Array();
-			wh_color[0]="#57CE13";
-			wh_color[1]="#50BF7F";
-			wh_color[2]="#50BF7F";
-				
-			//绘出字符
-			function draw()
+			//全局使用缓存
+			$.ajaxSetup(
 			{
-				//黑色背景，半透明显示
-				ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
-				ctx.fillRect(0, 0, c.width, c.height);
-				
-				//ctx.fillStyle = "#50BF7F";
-				ctx.fillStyle = wh_color[parseInt(Math.random()*100+1)%3];
-				ctx.font = font_size + "px arial";
-				
-				//drops循环
-				for(var i = 0; i < drops.length; i++)
+				cache : true
+			});
+			App.init();
+		});
+	</script>
+
+	<script src="http://cdn.bootcss.com/zTree.v3/3.5.24/js/jquery.ztree.core.min.js"></script>
+	<script src="http://7xj7hx.com1.z0.glb.clouddn.com/js/ztree_toc.js"></script>
+
+	<script type="text/javascript">
+		$(function()
+		{
+			//自动识别目录
+			$('#tree').ztree_toc(
+			{
+				is_auto_number : false,
+				documment_selector : '#MainListDiv',
+				ztreeStyle :
 				{
-					//随机打印字符
-					var text = txts[Math.floor(Math.random()*txts.length)];
-					
-					//x = i*font_size
-					//y = value of drops[i]*font_size
-					ctx.fillText(text, i*font_size, drops[i]*font_size);
-					
-					if(drops[i]*font_size > c.height || Math.random() > 0.95)
-						drops[i] = 0;
-					
-					//Y坐标增加
-					drops[i]++;
+					width : '218px',
+					overflow : 'hidden',
+					'z-index' : 2147483647,
+					border : '0px none',
+					right : '0px',
+					bottom : '0px',
+					height : 'auto'
 				}
-			}
-			setInterval(draw, 50);
-		}
-</script>																		
+			});
+			$('#tree').show();
+
+			$(".sidebar-search").on("submit", function(e)
+			{
+				e.preventDefault();
+				window.location.href = "https://www.baidu.com/s?wd=site:ganecheng.tech " + $("input[name='wd']").val();
+			});
+
+			//attach the waves effect
+			Waves.attach('.waves');
+			Waves.init();
+
+			$.getScript("http://s11.cnzz.com/z_stat.php?id=1261033374&web_id=1261033374");
+		});
+	</script>
+	<!-- END JAVASCRIPTS -->
 </body>
+<!-- END BODY -->
 </html>
